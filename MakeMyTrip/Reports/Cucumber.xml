@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="32.798" tests="4" skipped="0" failures="2" errors="0">
+<testcase classname="Homestays and Villas" name="Validate user is able to click on Homestays and villas link" time="9.584">
+<system-out><![CDATA[
+Given Browser should be launched and url should be navigated and Pop up handled.passed
+When User should be able to click on Homestays and villas link..............passed
+Then User should be navigated to Homestays and villas page..................passed
+Then Browser should be closed...............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login to Application" name="Validate user is able to login to the application" time="5.11">
+<failure/>
+<system-out><![CDATA[
+Given Browser should be launched and url should be navigated................undefined
+When User should able to give Mobile number.................................skipped
+And User is able to click on continue button................................skipped
+And User should click on login via password.................................skipped
+Then User should enter valid password.......................................skipped
+And User is able to click on Login button...................................skipped
+And Verify user should be logged in to Application..........................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Search Button" name="Validate user is able to click on search button" time="10.438">
+<system-out><![CDATA[
+Given Browser should be launched and url should be navigated and Pop up handled.passed
+When User should be able to click on Homestays and villas link..............passed
+And User should be navigated to Homestays and villas page...................passed
+When User should be able to click on city lable option......................passed
+And User should be able to enter city name and select the city name.........passed
+And User should be able to click on the check-in and select the date........passed
+And User should be able to click on the check-out and select the date.......passed
+And User should be able to click on the Guests and select no of guests......passed
+And User should be able to click on Apply button............................passed
+Then User is able to click on the search button.............................passed
+And User should be navigate to the Banglore properties......................passed
+]]></system-out>
+</testcase>
+<testcase classname="Sort By" name="Validate user able to click on the sort by option" time="7.407">
+<failure/>
+<system-out><![CDATA[
+Given Browser should be launched and url should be navigated and Pop up handled.passed
+When User should be able to click on Homestays and villas link..............passed
+Then User should be navigated to Homestays and villas page..................passed
+And selecting option should be displayed....................................undefined
+]]></system-out>
+</testcase>
+</testsuite>
