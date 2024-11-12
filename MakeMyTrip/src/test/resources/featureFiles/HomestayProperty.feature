@@ -12,7 +12,6 @@ And User should be able to click on the check-out and select the date
 And User should be able to click on the Guests and select no of guests 
 And User should be able to click on Apply button
 And User is able to click on the search button
-Then User is able to click on the search button
 And user is click on the Price(Lowest First) option
 Then User is able to click on the property
 And user is able to navigate to the next page

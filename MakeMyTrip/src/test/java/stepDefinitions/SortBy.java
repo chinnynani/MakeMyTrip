@@ -1,11 +1,10 @@
 package stepDefinitions;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
 
-import elementRepository.HomePage;
+import elementRepository.SortByPage;
 import io.cucumber.java.en.Then;
 import utilPackage.DriverFactory;
 import utilityClasses.FileUtility;
@@ -13,42 +12,45 @@ import utilityClasses.FileUtility;
 public class SortBy{
 
 	WebDriver driver=DriverFactory.getDriver();
-	HomePage homepage=new HomePage(driver);
+	SortByPage sortbypage=new SortByPage(driver);
 	FileUtility fileUtility=new FileUtility();
 
 	@Then("selecting {int} should be displayed")
 	public void selecting_should_be_displayed(Integer SortOption) throws Exception {
+		
 		String sortoption=fileUtility.getDataFromExcel("Sheet1", SortOption-1, 0);
+		
 		switch (sortoption) {
         case "Popular":
-            homepage.getSortByOption_Popular().click();
+        	sortbypage.sortByOption_PopularClick();
             Thread.sleep(3000);
-            String appliedSortOptionPopular = homepage.getActiveSortOptionForPopular().getText();
+            String appliedSortOptionPopular = sortbypage.getActiveSortOptionForPopular();
             Assert.assertEquals(appliedSortOptionPopular, "Popular", "Popular sort option should be selected");
             Reporter.log("Popular option selected", true);
             break;
             
         case "Rating":
-            homepage.getSortByOption_Rating().click();
+        	sortbypage.getSortByOption_RatingClick();
             Thread.sleep(3000);
-            String appliedSortOptionRating = homepage.getActiveSortOptionForRating().getText();
+            String appliedSortOptionRating = sortbypage.getActiveSortOptionForRating();
             Assert.assertEquals(appliedSortOptionRating, "User Rating (Highest First)", "Rating sort option should be selected");
             Reporter.log("Rating option selected", true);
             break;
             
         case "Price (Highest First)":
-            homepage.getSortByOption_PriceHeighestFirst().click();
+        	sortbypage.getSortByOption_PriceHeighestFirstClick();
             Thread.sleep(3000);
-            String appliedSortOptionHigh = homepage.getActiveSortOptionForHighest().getText();
+            String appliedSortOptionHigh = sortbypage.getActiveSortOptionForHighest();
             Assert.assertEquals(appliedSortOptionHigh, "Price (Highest First)", "Price (Highest First) sort option should be selected");
-            Reporter.log("Price option selected", true);
+            Reporter.log("Price (Highest First) option selected", true);
             break;
+            
         case "Price (Lowest First)":
-            homepage.getSortByOption_PriceLowestFirst().click();
+        	sortbypage.getSortByOption_PriceLowestFirstClick();;
             Thread.sleep(3000);
-            String appliedSortOptionLow = homepage.getActiveSortOptionForLowest().getText();
+            String appliedSortOptionLow = sortbypage.getActiveSortOptionForLowest();
             Assert.assertEquals(appliedSortOptionLow, "Price (Lowest First)", "Price (Lowest First) sort option should be selected");
-            Reporter.log("Price option selected", true);
+            Reporter.log("Price (Lowest First) option selected", true);
             break;
 		} 
 	}

@@ -21,6 +21,9 @@ public class HomePage {
 	public WebElement getHomestaysAndVillasLink() {
 		return homestaysAndVillasLink;
 	}
+	public void getHomestaysAndVillasLinkClick() {
+		getHomestaysAndVillasLink().click();
+	}
 
 //pop up handling	
 	@FindBy(xpath = "//span[@data-cy='closeModal']")
@@ -29,6 +32,9 @@ public class HomePage {
 	public WebElement getHomePopUp() {
 		return homePopUp;
 	}
+	public void PopUp() {
+		getHomePopUp().click();
+	}
 
 //choosing city	
 	@FindBy(id = "city")
@@ -36,6 +42,9 @@ public class HomePage {
 
 	public WebElement getCityLink() {
 		return cityLink;
+	}
+	public void getCityLinkClick() {
+		getCityLink().click();
 	}
 
 	@FindBy(xpath = "//input[@title='Where do you want to stay?']")
@@ -48,6 +57,7 @@ public class HomePage {
 	public void cityName() {
 		selectCity.click();
 	}
+
 
 // check in date
 	@FindBy(id = "checkin")
@@ -65,11 +75,6 @@ public class HomePage {
 		return driver.findElement(By.xpath("//div[contains(text(),'" + month + "')]/../..//div[contains(@aria-label,'"
 				+ month.substring(0, 3) + " " + date + "')]"));
 	}
-//	@FindBy(xpath ="//div[contains(@aria-label,'Nov 30')]" )
-//	private WebElement checkInDate;
-//	public WebElement getSelectedCheckInDateElement() {
-//		return checkInDate;
-//	}
 
 //check out date
 	@FindBy(id = "checkout")
@@ -95,26 +100,22 @@ public class HomePage {
 	public WebElement getGuestDropdown() {
 		return guestDropdown;
 	}
-
-	@FindBy(xpath = "//ul/li[@class='active'][1]")
-	private WebElement adultsDropdown;
-
-	public WebElement getadultsDropdown() {
-		return searchButton;
+	public void getGuestDropdownClick() {
+		getGuestDropdown().click();
 	}
-
-	@FindBy(xpath = "//span[@data-testid='adult_count'][2]")
+	public void getadultsDropdownClick(WebDriver driver) {
+		driver.findElement(By.xpath("(//div[@class='gstSlctCont'])[1]")).click();
+	}
+	@FindBy(xpath = "//ul[@class='gstSlct__list']/li[3]")
 	private WebElement adultscount;
 
 	public WebElement getAdultscount() {
 		return adultscount;
 	}
-
-	public void adultsOption() {
-		getGuestDropdown().click();
-		getadultsDropdown().click();
+	public void getAdultscountClick() {
 		getAdultscount().click();
 	}
+
 
 //Apply button
 	@FindBy(xpath = "//button[@data-cy='RoomsGuestsNew_327']")
@@ -124,7 +125,7 @@ public class HomePage {
 		return applyButton;
 	}
 
-	public void apply() {
+	public void applyButton() {
 		getApplyButton().click();
 	}
 
@@ -136,7 +137,7 @@ public class HomePage {
 		return searchButton;
 	}
 
-	public void search() {
+	public void searchButton() {
 		getsearchButton().click();
 	}
 
@@ -148,6 +149,10 @@ public class HomePage {
 	public WebElement getInrButton() {
 		return inrButton;
 	}
+	public void getInrButtonClick() {
+		getInrButton().click();
+	}
+	
 	@FindBy(xpath = "//input[@placeholder='Search Currency']")
 	private WebElement indianRupeeOption;
 
@@ -158,12 +163,15 @@ public class HomePage {
 		 indianRupeeOption.click();
 	}
 
-//To change the check out date
+//To change the check out date  
 	@FindBy(xpath = "//label[@class='lbl_input latoBold  font12 blueText capText']")
 	private WebElement changeCheckOutOption;
 
 	public WebElement getChangeCheckOutOption() {
 		return changeCheckOutOption;
+	}
+	public void getChangeCheckOutOptionClick() {
+		getChangeCheckOutOption().click();
 	}
 
 	public WebElement getChangeCheckOutDate(WebDriver driver, String month2, int date2) {
@@ -178,7 +186,8 @@ public class HomePage {
 		return againClickApply;
 	}
 
-// validation for the navigation to homestays and villas
+// validation for the navigation to homestays and villas   
+	
 	@FindBy(xpath = "//a[text()='Homestays and more in Bangalore']")
 	private WebElement bangloreProperties;
 
@@ -257,12 +266,7 @@ public class HomePage {
 	@FindBy(xpath = "//span[text()='(Lowest First)']/../..//span[text()='Price ']")
 	private WebElement sortByOption_PriceLowestFirst;
 
-	public WebElement getSortByOption_PriceLowestFirst() {
-		return sortByOption_PriceLowestFirst;
-	}
-	public WebElement getActiveSortOptionForLowest() {
-		return sortByOption_PriceLowestFirst;
-	}
+	
 
 //	@FindBy(xpath = "//span[text()='Sri Tirumala Paradise near KSR Bengaluru Railway Station']")
 	@FindBy(id = "htl_id_seo_202204071302205878")
@@ -281,47 +285,6 @@ public class HomePage {
 	public WebElement getParticularPropertyTitle() {
 		return particularPropertyTitle;
 	}
-	
-//Explore the Map
-	
-	@FindBy(xpath = "//img[@class='mapEntry__map']")
-	private WebElement exploreMap;
-	
-	@FindBy(xpath = "//input[@placeholder='Search in Area, Property or Locality in Bangalore']")
-	private WebElement searchText;
-	
-	public WebElement getSearchText() {
-		return searchText;
-	}
-
-	@FindBy(xpath = "//button[@title='Zoom in']")
-	private WebElement clickingPlus;
-	
-	@FindBy(xpath = "//span[@class='cm__modalClose modalCloseCenter']")
-	private WebElement closeMap;
-	
-	@FindBy(xpath = "//a[text()='Homestays and more in Bangalore']")
-	private WebElement returnBack;
-	
-
-	public WebElement getReturnBack() {
-		return returnBack;
-	}
-
-	public WebElement getExploreMap() {
-		return exploreMap;
-	}
-
-	public WebElement getClickingPlus() {
-		return clickingPlus;
-	}
-
-	public WebElement getCloseMap() {
-		return closeMap;
-	}
-
-
-
-	
+		
 
 }
